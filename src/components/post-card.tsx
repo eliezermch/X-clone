@@ -1,4 +1,6 @@
 import { Card, CardHeader, CardBody, CardFooter, Avatar, Button } from '@nextui-org/react';
+import { IconMessageCircle, IconHeart, IconRepeat } from '@tabler/icons-react';
+
 import Link from 'next/link';
 
 interface Props {
@@ -9,9 +11,8 @@ interface Props {
 }
 
 export default function PostCard({ userName, userFullname, avatarUrl, content }: Props) {
-  console.log('🚀 ~ file: post-card.tsx:12 ~ PostCard ~ userFullname:', userFullname);
   return (
-    <Card className="max-w-[340px]">
+    <Card className="shadow-none bg-transparent hover:bg-slate-800 transition border-b rounded-none cursor-pointer border-white/20">
       <CardHeader className="justify-between">
         <div className="flex gap-x-3">
           <Link href={`/${userName}`}>
@@ -27,7 +28,17 @@ export default function PostCard({ userName, userFullname, avatarUrl, content }:
       <CardBody className="px-3 py-0 text-small text-white">
         <p>{content}</p>
       </CardBody>
-      <CardFooter className="gap-3"></CardFooter>
+      <CardFooter className="gap-3">
+        <button>
+          <IconMessageCircle className="w-4 h-4" />
+        </button>
+        <button>
+          <IconHeart className="w-4 h-4" />
+        </button>
+        <button>
+          <IconRepeat className="w-4 h-4" />
+        </button>
+      </CardFooter>
     </Card>
   );
 }
