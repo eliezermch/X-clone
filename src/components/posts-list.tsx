@@ -14,7 +14,14 @@ function PostsList({ posts }: { posts: Post[] | null }) {
         const avatarUrl = user ? user.avatar_url : '';
 
         return (
-          <PostCard key={id} userName={userName} userFullname={userFullname} avatarUrl={avatarUrl} content={content} />
+          <PostCard
+            key={id}
+            id={id}
+            userName={userName}
+            userFullname={userFullname}
+            avatarUrl={avatarUrl}
+            content={content}
+          />
         );
       })}
     </>

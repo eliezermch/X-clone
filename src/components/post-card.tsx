@@ -1,16 +1,21 @@
+import { deletePost } from '@/app/actions/delete-post-action';
 import { Card, CardHeader, CardBody, CardFooter, Avatar, Button } from '@nextui-org/react';
-import { IconMessageCircle, IconHeart, IconRepeat } from '@tabler/icons-react';
+import { IconMessageCircle, IconHeart, IconRepeat, IconTrash } from '@tabler/icons-react';
 
 import Link from 'next/link';
+import DeleteButton from './delete-button';
 
 interface Props {
   userName: string;
   userFullname: string;
   avatarUrl: string;
   content: string;
+  id: string;
 }
 
-export default function PostCard({ userName, userFullname, avatarUrl, content }: Props) {
+export default function PostCard({ userName, userFullname, avatarUrl, content, id }: Props) {
+  console.log('🚀 ~ file: post-card.tsx:15 ~ PostCard ~ id:', id);
+
   return (
     <Card className="shadow-none bg-transparent hover:bg-slate-800 transition border-b rounded-none cursor-pointer border-white/20">
       <CardHeader className="justify-between">
@@ -38,6 +43,7 @@ export default function PostCard({ userName, userFullname, avatarUrl, content }:
         <button>
           <IconRepeat className="w-4 h-4" />
         </button>
+        <DeleteButton id={id} />
       </CardFooter>
     </Card>
   );
