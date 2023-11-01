@@ -1,4 +1,3 @@
-import { AuthButtonServer } from '@/components/auth-button-server';
 import CardCoverImage from '@/components/card-cover-image';
 import CardImage from '@/components/card-image';
 import ComposePost from '@/components/compose-post';
@@ -40,7 +39,6 @@ export default async function Home() {
         <PostsList posts={posts} />
       </section>
       <section className="fixed max-w-[350px] w-full min-h-screen flex flex-col gap-6 right-0 items-center self-start pt-3">
-        <AuthButtonServer />
         <CardCoverImage />
         <CardImage />
       </section>

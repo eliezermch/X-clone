@@ -1,4 +1,6 @@
 import { Button } from '@nextui-org/react';
+import { AuthButtonServer } from '@/components/auth-button-server';
+
 import {
   IconAlienFilled,
   IconBell,
@@ -16,6 +18,7 @@ import {
 function NavMenu() {
   return (
     <div className="flex flex-col gap-4 items-start">
+      <AuthButtonServer />
       <Button className="bg-black" startContent={<IconAlienFilled />}>
         X Clone By Eliezer
       </Button>

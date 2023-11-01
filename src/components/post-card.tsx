@@ -14,8 +14,6 @@ interface Props {
 }
 
 export default function PostCard({ userName, userFullname, avatarUrl, content, id }: Props) {
-  console.log('🚀 ~ file: post-card.tsx:15 ~ PostCard ~ id:', id);
-
   return (
     <Card className="shadow-none bg-transparent hover:bg-slate-800 transition border-b rounded-none cursor-pointer border-white/20">
       <CardHeader className="justify-between">
