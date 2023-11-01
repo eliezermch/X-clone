@@ -9,7 +9,12 @@ function CardImage() {
         <h4 className="font-bold text-large">Hip-Hop Radio</h4>
       </CardHeader>
       <CardBody className="overflow-visible py-2">
-        <Image alt="Card background" className="object-cover rounded-xl" src="/muerte.jpeg" width={270} />
+        <Image
+          alt="Card background"
+          className="object-cover rounded-xl"
+          src="https:/via.placeholder.com/120"
+          width={270}
+        />
       </CardBody>
     </Card>
   );
