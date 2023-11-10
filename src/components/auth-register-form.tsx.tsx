@@ -22,6 +22,29 @@ export default function AuthRegisterForm() {
     name: '',
   });
 
+  function getRandomHexColor() {
+    function getRandomInt(min: number, max: number) {
+      return Math.floor(Math.random() * (max - min + 1)) + min;
+    }
+
+    function componentToHex(c: number) {
+      const hex = c.toString(16);
+      return hex.length === 1 ? '0' + hex : hex;
+    }
+
+    // Ensure higher brightness by making the sum of color components higher
+    const minBrightness = 500; // Tweak this value as needed
+    let r, g, b;
+
+    do {
+      r = getRandomInt(200, 255);
+      g = getRandomInt(200, 255);
+      b = getRandomInt(200, 255);
+    } while (r + g + b < minBrightness);
+
+    return '%23' + componentToHex(r) + componentToHex(g) + componentToHex(b);
+  }
+
   const handleChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
 
@@ -53,7 +76,9 @@ export default function AuthRegisterForm() {
         data: {
           name: formData.name,
           user_name: formData.userName,
-          avatar_url: 'https:/via.placeholder.com/50',
+          avatar_url: `https://images.placeholders.dev/?text=${formData.name
+            .charAt(0)
+            .toLocaleUpperCase()}&width=50&height=50&bgColor=${getRandomHexColor()}`,
         },
         emailRedirectTo: window.location.origin,
       },
