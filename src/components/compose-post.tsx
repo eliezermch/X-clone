@@ -19,7 +19,7 @@ function ComposePost({ userAvatarUrl }: Props) {
         await addPost(formData);
         formRef.current?.reset();
       }}
-      className="flex flex-row p-3 border-b border-white/20"
+      className="flex flex-row p-3 border-b border-l border-r border-t border-white/20"
     >
       <Avatar className="mr-4" isBordered radius="full" size="md" src={userAvatarUrl} />
       <div className="flex flex-1 flex-col gap-y-4">

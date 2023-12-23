@@ -15,7 +15,7 @@ interface Props {
 
 export default function PostCard({ userName, userFullname, avatarUrl, content, id }: Props) {
   return (
-    <Card className="shadow-none bg-transparent hover:bg-slate-800 transition border-b rounded-none cursor-pointer border-white/20">
+    <Card className="cursor-pointer mt-4">
       <CardHeader className="justify-between">
         <div className="flex gap-x-3">
           <Link href={`/${userName}`}>

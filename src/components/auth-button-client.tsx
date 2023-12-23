@@ -7,7 +7,7 @@ import { GitHubIcon, GoogleIcon } from './icons';
 import { Button } from '@nextui-org/button';
 import { useState } from 'react';
 import AuthRegisterForm from './auth-register-form.tsx';
-import { IconMail } from '@tabler/icons-react';
+import { IconLogout, IconMail } from '@tabler/icons-react';
 
 interface Props {
   session: Session | null;
@@ -62,9 +62,12 @@ export function AuthButton({ session }: Props) {
           {signInWithEmail && <AuthRegisterForm />}
         </>
       ) : (
-        <Button className="ml-3" onClick={handleSignOut}>
-          Sign Out
-        </Button>
+        <>
+          <Button className="ml-3 hidden lg:block" onClick={handleSignOut}>
+            Sign Out
+          </Button>
+          <IconLogout className="block lg:hidden w-[20px] h-[20px] lg:w-[24px] lg:h-[24px]" onClick={handleSignOut} />
+        </>
       )}
     </header>
   );

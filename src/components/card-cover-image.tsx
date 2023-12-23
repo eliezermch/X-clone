@@ -3,7 +3,7 @@ import React from 'react';
 
 function CardCoverImage() {
   return (
-    <div className="max-w-[900px] gap-2 grid px-8">
+    <div className="max-w-[900px] gap-2 grid">
       <Card className="col-span-12 sm:col-span-4 h-[300px]">
         <CardHeader className="absolute z-10 top-1 flex-col !items-start">
           <p className="text-tiny text-white/60 uppercase font-bold">What to watch</p>
