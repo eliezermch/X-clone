@@ -5,10 +5,9 @@ import { cookies } from 'next/headers';
 import { revalidatePath } from 'next/cache';
 
 export const addPost = async (formData: FormData) => {
-  'use server';
   const content = formData.get('content');
 
-  if (content === null) return;
+  if (content === null || content === '') return false;
 
   const supabase = createServerActionClient({ cookies });
   const {

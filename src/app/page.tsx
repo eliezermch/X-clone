@@ -37,7 +37,7 @@ export default async function Home() {
           <ComposePost userAvatarUrl={session.user.user_metadata.avatar_url} />
           <PostsList posts={posts} />
         </section>
-        <section className="sticky top-0 min-w-[100px] max-w-[350px] w-full min-h-screen flex-col gap-6 right-0 items-center self-start pt-4 mr-6 hidden sm:flex">
+        <section className="sticky top-0 min-w-[100px] max-w-[350px] w-full min-h-screen flex-col gap-5 right-0 items-center self-start pt-4 mr-6 hidden sm:flex">
           <CardCoverImage />
           <CardImage />
         </section>

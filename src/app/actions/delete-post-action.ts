@@ -4,18 +4,16 @@ import { createServerActionClient } from '@supabase/auth-helpers-nextjs';
 import { cookies } from 'next/headers';
 import { revalidatePath } from 'next/cache';
 
-export const deletePost = async (id: string) => {
-  'use server';
+export const deletePost = async (id: string, user: any) => {
+  try {
+    if (!id || !user) return;
 
-  if (id === null) return;
+    const supabase = createServerActionClient({ cookies });
 
-  const supabase = createServerActionClient({ cookies });
-  const {
-    data: { user },
-  } = await supabase.auth.getUser();
-  if (user === null) return;
+    await supabase.from('posts').delete().eq('id', id).eq('user_id', user.id);
 
-  await supabase.from('posts').delete().eq('id', id).eq('user_id', user.id);
-
-  revalidatePath('/');
+    revalidatePath('/');
+  } catch (error) {
+    console.error('Error deleting post:', error);
+  }
 };

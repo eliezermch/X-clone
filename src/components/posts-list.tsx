@@ -6,7 +6,7 @@ function PostsList({ posts }: { posts: Post[] | null }) {
   return (
     <>
       {posts?.map((post) => {
-        const { id, content, user } = post;
+        const { id, content, user, user_id } = post;
 
         // Check if user is not null before accessing its properties
         const userName = user ? user.user_name : '';
@@ -17,6 +17,7 @@ function PostsList({ posts }: { posts: Post[] | null }) {
           <PostCard
             key={id}
             id={id}
+            postUserId={user_id}
             userName={userName}
             userFullname={userFullname}
             avatarUrl={avatarUrl}

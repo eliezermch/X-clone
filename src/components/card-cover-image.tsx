@@ -13,7 +13,7 @@ function CardCoverImage() {
           removeWrapper
           alt="Card background"
           className="z-0 w-full h-full object-cover"
-          src="https:/via.placeholder.com/120"
+          src="https:/via.placeholder.com/300"
         />
       </Card>
     </div>

@@ -1,9 +1,9 @@
-import { deletePost } from '@/app/actions/delete-post-action';
 import { Card, CardHeader, CardBody, CardFooter, Avatar, Button } from '@nextui-org/react';
 import { IconMessageCircle, IconHeart, IconRepeat, IconTrash } from '@tabler/icons-react';
 
 import Link from 'next/link';
 import DeleteButton from './delete-button';
+import { fetchUserData } from '@/app/actions/fetch-user-data';
 
 interface Props {
   userName: string;
@@ -11,9 +11,12 @@ interface Props {
   avatarUrl: string;
   content: string;
   id: string;
+  postUserId: string;
 }
 
-export default function PostCard({ userName, userFullname, avatarUrl, content, id }: Props) {
+export default async function PostCard({ userName, userFullname, avatarUrl, content, id, postUserId }: Props) {
+  const user = await fetchUserData();
+
   return (
     <Card className="cursor-pointer mt-4">
       <CardHeader className="justify-between">
@@ -41,7 +44,8 @@ export default function PostCard({ userName, userFullname, avatarUrl, content, i
         <button>
           <IconRepeat className="w-4 h-4" />
         </button>
-        <DeleteButton id={id} />
+        {/* Hide show this button only for the user that can delete is post */}
+        {user && user.id === postUserId && <DeleteButton id={id} user={user} />}
       </CardFooter>
     </Card>
   );
