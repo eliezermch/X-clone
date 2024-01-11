@@ -2,7 +2,7 @@ function ComposePostTextArea() {
   return (
     <textarea
       //   ref={textAreaRef}
-      className="w-full h-20 text-xl bg-black border-none placeholder-gray-500 focus-visible:outline-none"
+      className="w-full h-20 text-xl bg-black border-none placeholder-gray-500 focus-visible:outline-none resize-none"
       placeholder="What's happening?"
       name="content"
       id=""
