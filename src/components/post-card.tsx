@@ -18,7 +18,7 @@ export default async function PostCard({ userName, userFullname, avatarUrl, cont
   const user = await fetchUserData();
 
   return (
-    <Card className="cursor-pointer mt-4">
+    <Card className="mt-4">
       <CardHeader className="justify-between">
         <div className="flex gap-x-3">
           <Link href={`/${userName}`}>
