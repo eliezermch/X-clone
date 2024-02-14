@@ -23,7 +23,7 @@ interface Props {
 
 function NavMenu({ userAvatarUrl, userName, userFullName }: Props) {
   return (
-    <div className="flex flex-col gap-3 items-center lg:items-start">
+    <nav className="flex flex-col gap-3 items-center lg:items-start">
       <Button
         className="bg-black"
         startContent={<IconAlienFilled className="w-[20px] h-[20px] lg:w-[24px] lg:h-[24px]" />}
@@ -102,7 +102,7 @@ function NavMenu({ userAvatarUrl, userName, userFullName }: Props) {
       <Avatar className="block lg:hidden w-[32px] h-[32px] lg:w-[40px] lg:h-[40px]" src={userAvatarUrl} />
 
       <AuthButtonServer />
-    </div>
+    </nav>
   );
 }
 

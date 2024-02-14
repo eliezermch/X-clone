@@ -1,22 +1,11 @@
 import PostsList from '@/components/posts-list';
 import ComposePost from '@/components/compose-post';
 import { Session } from '@supabase/supabase-js';
+import { Post } from '@/types/posts';
 
 interface Props {
   session: Session;
-  posts:
-    | {
-        content: string;
-        created_at: string;
-        id: string;
-        user_id: string;
-        user: {
-          name: string;
-          avatar_url: string;
-          user_name: string;
-        } | null;
-      }[]
-    | null;
+  posts: Post[] | null;
 }
 
 const PostSection = ({ session, posts }: Props) => {

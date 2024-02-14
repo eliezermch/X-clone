@@ -5,9 +5,10 @@ import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
 import { Database } from '@/types/database';
 import NewsSection from '@/components/news-section';
 import MenuSection from '@/components/menu-section';
+import ProfileSection from '@/components/profile-section';
 
 const Username = async ({ params }: { params: { username: string } }) => {
-  const useData = await fetchUserDataByUsername(params.username);
+  const userData = await fetchUserDataByUsername(params.username);
 
   const supabase = createServerComponentClient<Database>({ cookies });
   const {
@@ -22,6 +23,7 @@ const Username = async ({ params }: { params: { username: string } }) => {
     <main className="flex w-full justify-center">
       <div className="relative flex min-h-screen w-full max-w-[1440px] flex-row items-center justify-center">
         <MenuSection session={session} />
+        <ProfileSection userData={userData} />
         <NewsSection />
       </div>
     </main>
