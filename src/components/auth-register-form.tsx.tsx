@@ -93,7 +93,7 @@ export default function AuthRegisterForm({ test }: Props) {
   };
 
   return (
-    <div className="min-w-[400px]">
+    <div className="min-w-[320px] md:min-w-[400px] xl:min-w-[440px]">
       {signIn ? (
         <>
           <form className="flex flex-col gap-4 mt-2" onSubmit={handleSignInWithEmail}>

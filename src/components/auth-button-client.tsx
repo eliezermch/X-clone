@@ -49,13 +49,13 @@ export function AuthButton({ session }: Props) {
   };
 
   return (
-    <header>
+    <header className="flex flex-col gap-2 md:block">
       {session === null ? (
         <>
           <button
             onClick={handleSignInWithGitHub}
             type="button"
-            className="text-white bg-[#24292F] focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:ring-gray-500 hover:bg-[#050708]/30 mr-2 mb-2"
+            className="text-white bg-[#24292F] focus:ring-4 focus:outline-none focus:ring-[#24292F]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center focus:ring-gray-500 hover:bg-[#050708]/30 mr-3 mb-2"
           >
             <GitHubIcon />
             Sign in with Github
@@ -64,7 +64,7 @@ export function AuthButton({ session }: Props) {
             <button
               onClick={handleGoBack}
               type="button"
-              className="text-white bg-rose-700 hover:bg-rose-700/80 focus:ring-4 focus:outline-none focus:ring-rose-700/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-rose-700/55 mr-2 mb-2"
+              className="text-white bg-rose-700 hover:bg-rose-700/80 focus:ring-4 focus:outline-none focus:ring-rose-700/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-rose-700/55 mr-3 mb-2"
             >
               <IconArrowLeft className="w-4 h-4 mr-2" />
               Go back
@@ -75,7 +75,7 @@ export function AuthButton({ session }: Props) {
               <button
                 onClick={handleSignInWithEmailState}
                 type="button"
-                className="text-white bg-[#4285F4] hover:bg-[#4285F4]/80 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-2 mb-2"
+                className="text-white bg-[#4285F4] hover:bg-[#4285F4]/80 focus:ring-4 focus:outline-none focus:ring-[#4285F4]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#4285F4]/55 mr-3 mb-2"
               >
                 <IconMail className="w-4 h-4 mr-2" />
                 Sign in with Email
@@ -87,7 +87,7 @@ export function AuthButton({ session }: Props) {
               <button
                 onClick={handleSignInWithTestAccount}
                 type="button"
-                className="text-white bg-[#6b7280] hover:bg-[#6b7280]/80 focus:ring-4 focus:outline-none focus:ring-[#6b7280]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#6b7280]/55 mr-2 mb-2"
+                className="text-white bg-[#6b7280] hover:bg-[#6b7280]/80 focus:ring-4 focus:outline-none focus:ring-[#6b7280]/50 font-medium rounded-lg text-sm px-5 py-2.5 text-center inline-flex items-center dark:focus:ring-[#6b7280]/55 mr-3 mb-2"
               >
                 <IconTestPipe2 className="w-4 h-4 mr-2" />
                 Use Test Account
