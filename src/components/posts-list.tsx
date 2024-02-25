@@ -1,6 +1,6 @@
 import React from 'react';
 import PostCard from './post-card';
-import { Post, User } from '@/types/posts';
+import { Post } from '@/types/posts';
 
 function PostsList({ posts }: { posts: Post[] | null }) {
   return (

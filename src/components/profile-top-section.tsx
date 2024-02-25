@@ -8,7 +8,7 @@ interface Props {
 
 const ProfileTopSection = ({ userData }: Props) => {
   return (
-    <div className="h-14 flex items-center gap-6 px-4 fixed top-0 bg-black opacity-65 backdrop-blur-md">
+    <div className="h-14 flex items-center gap-5 px-4 fixed top-0 bg-black opacity-65 backdrop-blur-md">
       <div>
         <Link href={'/'}>
           <IconArrowLeft />

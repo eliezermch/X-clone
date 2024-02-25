@@ -14,6 +14,7 @@ import {
   IconVip,
 } from '@tabler/icons-react';
 import { AuthButtonServer } from './auth-button-server';
+import Link from 'next/link';
 
 interface Props {
   userAvatarUrl: string;
@@ -91,15 +92,17 @@ function NavMenu({ userAvatarUrl, userName, userFullName }: Props) {
         <p className="hidden lg:block">More options</p>
       </Button>
 
-      <User
-        className="hidden lg:flex self-end mr-10 mt-4"
-        name={userFullName}
-        description={userName}
-        avatarProps={{
-          src: userAvatarUrl,
-        }}
-      />
-      <Avatar className="block lg:hidden w-[32px] h-[32px] lg:w-[40px] lg:h-[40px]" src={userAvatarUrl} />
+      <Link href={`/${userName ?? 'admin'}`}>
+        <User
+          className="hidden w-full lg:flex self-end ml-3 mt-2"
+          name={userFullName}
+          description={userName}
+          avatarProps={{
+            src: userAvatarUrl,
+          }}
+        />
+        <Avatar className="block lg:hidden w-[32px] h-[32px] lg:w-[40px] lg:h-[40px]" src={userAvatarUrl} />
+      </Link>
 
       <AuthButtonServer />
     </nav>

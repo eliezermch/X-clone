@@ -1,5 +1,4 @@
 import MenuSection from '@/components/menu-section';
-import NavMenu from '@/components/nav-menu';
 import NewsSection from '@/components/news-section';
 import PostSection from '@/components/post-section';
 import { Database } from '@/types/database';
@@ -26,7 +25,7 @@ export default async function Home() {
     <main className="flex w-full justify-center">
       <div className="relative flex min-h-screen w-full max-w-[1440px] flex-row items-center justify-center">
         <MenuSection session={session} />
-        <PostSection session={session} posts={posts} />
+        <PostSection avatar={session.user.user_metadata.avatar_url} posts={posts} />
         <NewsSection />
       </div>
     </main>

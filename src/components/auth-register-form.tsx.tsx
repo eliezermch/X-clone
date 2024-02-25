@@ -1,14 +1,18 @@
 import { Input } from '@nextui-org/react';
-import { useState, ChangeEvent, FormEvent } from 'react';
+import { useState, ChangeEvent, FormEvent, useRef } from 'react';
 import { redirect, useRouter } from 'next/navigation';
 import { type Session, createClientComponentClient } from '@supabase/auth-helpers-nextjs';
 import { getRandomHexColor } from '@/utils/functions';
 
-export default function AuthRegisterForm() {
+interface Props {
+  test: boolean;
+}
+
+export default function AuthRegisterForm({ test }: Props) {
   const supabase = createClientComponentClient();
   const router = useRouter();
 
-  const [signIn, setSignIn] = useState(false);
+  const [signIn, setSignIn] = useState(test);
 
   const [registerSuccess, setRegisterSuccess] = useState(false);
 
@@ -89,15 +93,17 @@ export default function AuthRegisterForm() {
   };
 
   return (
-    <div className="w-[400px]">
+    <div className="min-w-[400px]">
       {signIn ? (
         <>
           <form className="flex flex-col gap-4 mt-2" onSubmit={handleSignInWithEmail}>
-            <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
+            <div className="flex flex-col w-full flex-wrap md:flex-nowrap gap-2">
               <Input type="email" label="Email" name="email" isRequired onChange={handleChange} />
+              {test && <small>{test === true ? 'admin@em-admin.com' : ''}</small>}
             </div>
-            <div className="flex w-full flex-wrap md:flex-nowrap gap-4">
+            <div className="flex flex-col w-full flex-wrap md:flex-nowrap gap-2">
               <Input type="password" label="Password" name="password" isRequired onChange={handleChange} />
+              {test && <small>{test === true ? 'admin123' : ''}</small>}
             </div>
             <div className="flex justify-between">
               <button
