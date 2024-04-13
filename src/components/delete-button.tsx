@@ -8,7 +8,7 @@ function DeleteButton({ id, user }: { id: string; user: any }) {
   return (
     <div>
       <button className="hover:bg-red/40" onClick={() => deletePost(id, user)}>
-        <IconTrash className="w-4 h-4 hover:color-red" />
+        <IconTrash className="w-4 h-4 hover:text-rose-700" />
       </button>
     </div>
   );

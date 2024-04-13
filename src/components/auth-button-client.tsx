@@ -99,7 +99,7 @@ export function AuthButton({ session }: Props) {
         </>
       ) : (
         <>
-          <Button className="ml-5 mt-1 hidden lg:block" onClick={handleSignOut}>
+          <Button className="ml-5 mt-1 hidden lg:block hover:opacity-80" onClick={handleSignOut}>
             Sign Out
           </Button>
           <IconLogout className="block lg:hidden w-[20px] h-[20px] lg:w-[24px] lg:h-[24px]" onClick={handleSignOut} />

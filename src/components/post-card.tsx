@@ -36,13 +36,13 @@ export default async function PostCard({ userName, userFullname, avatarUrl, cont
       </CardBody>
       <CardFooter className="gap-3">
         <button>
-          <IconMessageCircle className="w-4 h-4" />
+          <IconMessageCircle className="w-4 h-4 hover:opacity-70" />
         </button>
         <button>
-          <IconHeart className="w-4 h-4" />
+          <IconHeart className="w-4 h-4 hover:opacity-70" />
         </button>
         <button>
-          <IconRepeat className="w-4 h-4" />
+          <IconRepeat className="w-4 h-4 hover:opacity-70" />
         </button>
         {/* Hide show this button only for the user that can delete is post */}
         {user && user.id === postUserId && <DeleteButton id={id} user={user} />}

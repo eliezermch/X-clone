@@ -24,7 +24,10 @@ function ComposePost({ userAvatarUrl }: Props) {
       <Avatar className="mr-4" isBordered radius="full" size="md" src={userAvatarUrl} />
       <div className="flex flex-1 flex-col gap-y-4">
         <ComposePostTextArea />
-        <button type="submit" className="bg-sky-300 text-sm font-bold rounded-full px-5 py-2 self-end">
+        <button
+          type="submit"
+          className="bg-sky-300 hover:bg-sky-300/70 text-sm font-bold rounded-full px-5 py-2 self-end"
+        >
           Post
         </button>
       </div>
